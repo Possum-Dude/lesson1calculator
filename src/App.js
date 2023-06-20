@@ -11,6 +11,10 @@ const[ answer, setAnswer ] = useState("");
 const[ first, setFirst] = useState(10);
 const[ second, setSecond] = useState(22);
 
+const LogCalculate = (first, second, symbol) => {
+  console.log("Running the calc",first + " " + symbol + " " + second + " = " + eval(first +symbol + second));
+}
+
 const Calculate = (value) => {
   console.log("what is value?", value);
 
@@ -21,15 +25,18 @@ switch (value) {
 case "-": 
 setAnswer(first - second);
 break;
-case"+":  setAnswer(first + second);
+case"+":
+  setAnswer(Number(first + second));
 break;
-case "/":  setAnswer(first / second);
+case "/":  
+setAnswer(first / second);
 break;
-case "*":  setAnswer(first * second);
+case "*":  
+setAnswer(first * second);
 break;
 default:  setAnswer("Error");
 }
-
+LogCalculate(first, second, value);
 
   }
 }
@@ -50,11 +57,11 @@ var Add = (x) =>{
         <h1>Simple Calculator</h1>
         <input type="number"
          value={Number(first)}
-          onChange={(e) => setFirst(e.target.value)}/>
+          onChange={(e) => setFirst(Number(e.target.value))}/>
 
           <input type="number"
          value={Number(second)}
-          onChange={(e) => setSecond(e.target.value)}/>  
+          onChange={(e) => setSecond(Number(e.target.value))}/>  
 
           <input type="number" defaultValue={answer}/> 
          <div><button className='Addbutton' onClick={() =>Calculate("+")}>+</button>
@@ -67,6 +74,7 @@ var Add = (x) =>{
 </button>
       </header>
     </div>
+    
   );
 }
 
