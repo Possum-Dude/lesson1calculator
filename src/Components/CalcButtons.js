@@ -11,17 +11,17 @@ const CalcButtons = () => {
 const[ first, setFirst] = useState(10);
 const[ second, setSecond] = useState(22);
 
-let trigger = false
+const[ trigger, setTrigger] =useState( false);
 const keyInput = (value) => {
-
+console.log(value + ": " + trigger)
 let symbols = ["+", "-", "*", "/"];
 if(symbols.includes(value)) {
-  trigger = true
+  setTrigger (true);
 }
-if(trigger === false) {
+if(trigger === false ) {
   setFirst(first + String(value)); // concatinates the numbers not adding them 
 }
-if(trigger === true) {
+if(trigger === true & !symbols.includes(value)) {
   setSecond(second + String(value)); // concatinates the numbers not adding them 
 }
 
@@ -31,29 +31,30 @@ if(trigger === true) {
 
 
     const Calculate = (value) => {
-        LogValue( value);
+         LogValue( value);
+         keyInput (value);
       
-        if (value !== "") {
+      //   if (value !== "") {
       
-      switch (value) {
+      // switch (value) {
       
-      case "-": 
-      setAnswer(first - second);
-      break;
-      case"+":
-        setAnswer(Number(first + second));
-      break;
-      case "/":  
-      setAnswer(first / second);
-      break;
-      case "*":  
-      setAnswer(first * second);
-      break;
-      default:  setAnswer("Error");
-      }
-      LogCalculate(first, second, value);
+      // case "-": 
+      // setAnswer(first - second);
+      // break;
+      // case"+":
+      //   setAnswer(Number(first + second));
+      // break;
+      // case "/":  
+      // setAnswer(first / second);
+      // break;
+      // case "*":  
+      // setAnswer(first * second);
+      // break;
+      // default:  setAnswer("Error");
+      // }
+      // LogCalculate(first, second, value);
       
-        }
+      //   }
        }
   return (
     <div>
