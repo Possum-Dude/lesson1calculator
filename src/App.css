@@ -25,6 +25,17 @@ h1 {
   cursor: pointer;
 }
 
+.digits button {
+  background-color: #70f549;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  border: 0.5px solid #b0b0b0;
+}
+.digits button:hover {
+  background-color: #c9c9c9;
+}
+
 .Addbutton {
   border: 0.5px solid #413f3f;
   color: rgb(182, 241, 240);
@@ -37,7 +48,17 @@ h1 {
   cursor: pointer;
 }
 
- 
+.Appbutton {
+  border: 0.5px solid #413f3f;
+  color: rgb(182, 241, 240);
+  justify-content: center;
+  align-items: center;
+  background-color: #428e57;
+  width: 150px;
+  height: 50px;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+} 
 
 .button:hover {
   background-color: #525252;

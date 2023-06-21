@@ -6,6 +6,9 @@ import CalcButtons from './Components/CalcButtons'
 const App = (props) => {
 
 
+
+
+
 const[ x, setX ] = useState(0);
 
 
@@ -27,11 +30,12 @@ var Add = (x) =>{
 
       <header className="App-header">
         <h1>Simple Calculator</h1>
+        
         <CalcButtons></CalcButtons>
 
-        <button className="Addbutton" onClick={() => Add(x)}>
+        {/* <button className="Addbutton" onClick={() => Add(x)}>
   Add 1 to x
-</button>
+</button> */}
       </header>
     </div>
     
