@@ -1,16 +1,22 @@
 import React from 'react'
+import'../drip.scss'
 
+
+//https://codepen.io/jeffmccarthyesq/pen/vYVdRvn
+//https://create-react-app.dev/docs/adding-a-sass-stylesheet/
 const Inputs = (props) => {
   return (
-    <div><input type="number"
-    value={Number(props.first)}
-     onChange={(e) => props.setFirst(Number(e.target.value))}/>
-
-     <input type="number"
-    value={Number(props.second)}
-     onChange={(e) => props.setSecond(Number(e.target.value))}/>  
-
-     <input type="number" defaultValue={props.answer}/> </div>
+    <div>
+      <div className="drip">{Number(props.first)} {props.operation} {Number(props.second)} {props.answer}</div>
+      <div className="goo">
+        <div className="drop"></div>
+        <div className="drop"></div>
+        <div className="drop"></div>
+        <div className="drop"></div>
+        <div className="drop"></div>
+        <div className="drop"></div>
+      </div>
+    </div>
   )
 }
 

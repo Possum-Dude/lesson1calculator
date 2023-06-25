@@ -1,0 +1,189 @@
+$hue: #0783f0;
+
+$hue-light: lighten($hue, 40%);
+
+$hue-dark: darken($hue, 30%);
+
+
+
+
+.drip {
+
+    overflow: hidden;
+
+    // width: 100vw;
+
+    // height: 100vh;
+
+    font-family: sans-serif;
+
+    // background: $hue-light;
+
+
+
+
+    margin: 0;
+
+    // font-weight: bold;
+
+    font-size: 50px;
+
+    text-align: center;
+
+    color: $hue;
+
+
+
+
+}
+
+
+
+
+
+.goo {
+
+    position: relative;
+
+    // top: 40%;
+
+    width: 600px;
+
+    margin: auto;
+
+    // transform: translateY(-60%);
+
+    filter: url(#goo);
+
+}
+
+
+
+
+.drop {
+
+    opacity: 20%;
+
+    width: 30px;
+
+    height: 40px;
+
+    background: adjust-hue($hue, -6deg);
+
+    border-radius: 1000px; //drip circle
+
+    position: absolute;
+
+    animation: drip 10s infinite;
+
+    border: 0px solid $hue-dark;
+
+    border-top: none;
+
+    // top: 170px;
+
+    left: 10px;
+
+
+
+
+    &:nth-child(2) {
+
+        left: 130px;
+
+        animation-delay: 3s;
+
+    }
+
+
+
+
+    &:nth-child(3) {
+
+        left: 297px;
+
+        animation-delay: 2s;
+
+    }
+
+
+
+
+    &:nth-child(4) {
+
+        left: 203px;
+
+        animation-delay: 4s;
+
+    }
+
+
+
+
+    &:nth-child(5) {
+
+        left: 415px;
+
+        animation-delay: 1.5s;
+
+    }
+
+
+
+
+    &:nth-child(6) {
+
+        left: 509px;
+
+        animation-delay: 5s;
+
+    }
+
+}
+
+
+
+
+@keyframes drip {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(0);
+
+    }
+
+
+
+
+    35% {
+
+        opacity: 1;
+
+        transform: translateY(30px);
+
+    }
+
+
+
+
+    50% {
+
+        transform: translateY(110vh);
+
+    }
+
+
+
+
+    100% {
+
+        transform: translateY(110vh);
+
+    }
+
+
+
+
+}
